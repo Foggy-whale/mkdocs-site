@@ -1,8 +1,8 @@
 # [Info]
-site_name: 周小童的个人网站 # 左上角标题
+site_name: FoggyWhale的个人空间 # 左上角标题
 site_url: https://Foggy-whale.github.io/mkdocs-site # 网站地址
-site_author: 周小童
-site_description: 周小童的个人网站
+site_author: FoggyWhale
+site_description: FoggyWhale的个人空间
 
 # [Navigation]
 nav:
@@ -11,11 +11,23 @@ nav:
     - 数逻:
       - Lecture1: 数逻/Lecture1.md
     - 技能拾遗:
-
+      - Shell: 
+        - shell: 技能拾遗/Shell.md
+        - shell script: 技能拾遗/ShellScript.md
+      - Git: 技能拾遗/Git.md
+      - Vim: 技能拾遗/Vim.md
+      - Markdown: 技能拾遗/Markdown.md
+      - Latex: 技能拾遗/Latex.md
+      - Makefile: 技能拾遗/Makefile.md
+      - CMake: 技能拾遗/CMake.md
+      - Docker: 技能拾遗/Docker.md
+      - GDB\LLDB: 技能拾遗/GDB\LLDB.md
+            
 # [UI]
 theme:
   name: material
   logo: logo.ico
+  favicon: logo.ico
   palette:
     - scheme: default # 日间模式
       primary: indigo # 上方的
