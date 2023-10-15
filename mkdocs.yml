@@ -6,7 +6,8 @@ site_description: FoggyWhale的个人空间
 
 # [Navigation]
 nav:
-  - 首页: index.md
+  - 首页: 
+    - index.md
   - 课件:
     - 前言.md
     - 数逻:
