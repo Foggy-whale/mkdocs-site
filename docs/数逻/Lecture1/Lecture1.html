@@ -1,16 +1,21 @@
----
-title: Number Systems and Boolean Algebra
-separator: <!--s-->
-verticalSeparator: <!--v-->
-theme: serif
-highlightTheme: tomorrow-night-bright
-revealOptions:
-  width: 1600
-  height: 900
-  margin: 0.04
-  transition: 'fade'
-  slideNumber: true
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Number Systems and Boolean Algebra</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/tomorrow-night-bright.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
 
 <link rel="stylesheet" href="custom.css">
 
@@ -20,7 +25,7 @@ revealOptions:
 
 ## Week 1: Number Systems and Boolean Algebra
 
-<!--s-->
+</script></section><section ><section data-markdown><script type="text/template">
 
 # Part 1 
 
@@ -28,7 +33,7 @@ revealOptions:
 
 # Number Systems
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## Representation
 
@@ -45,7 +50,7 @@ revealOptions:
   Number_r=(\Sigma_{i=0}^{i=n-1}A_i\cdot{r^i}+\Sigma_{j=-m}^{j=-1}A_j\cdot{r^j})
   $$
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## Binary Arithmetic
 
@@ -58,25 +63,25 @@ revealOptions:
 - Multiplication
 - BCD Addition
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Single Bit Subtraction with Borrow
 
 ![](./L1_01.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Mutiple Bit Binary Subtraction
 
 ![](./L1_02.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Binary Multiplication 
 
 ![](./L1_03.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Converting Decimal to Binary
 
@@ -87,13 +92,13 @@ revealOptions:
   - Repeat, subtracting from the prior remainder and recording the power, until the remainder is zero
   - **Place 1's in the positions in the binary result** corresponding to the powers recorded; in all other positions place 0's
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 #### Method 1
 
 ![](./L1_04.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Converting Decimal to Binary (Cont.)
 
@@ -104,7 +109,7 @@ revealOptions:
   - Convert the **Fraction Part**
   - Join the two results with a radix point
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Conversion Details
 
@@ -116,7 +121,7 @@ revealOptions:
 
   **Repeatedly multiply** the fraction by the new radix and **save the integer digits** that result. The digits for the new radix are the Integer digits in **order of their computation**. If the new radix is more than 10, then convert all integers exceed 10 to digits A, B, ...
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Example: Convert $46.6875_{10}$ To Base 2
 
@@ -134,15 +139,15 @@ revealOptions:
 
   $46.6875_{10}=101110.1011_2$
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Q: What if the fractional part can't become 0 as a result of the repeated multiplications?
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Solution: Specify number of bits to right of radix point and round or truncate to this number.
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Octal (Hexadecimal) to Binary and Back
 
@@ -164,11 +169,11 @@ $1001101.01101_2=0100\ 1101.0110\ 1000_2=(4\rm{D}.68)_{16}$
 
 $110\ 0101.101_2=(65.\rm{A})_{16}$
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Q: How many bits are required to represent **decimal digits** with a binary code?
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Solution: $\lceil log_2{10} \rceil=4$
 
@@ -180,7 +185,7 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
   $$
   $n=\lceil{log_2{M}}\rceil$, where $\lceil x \rceil$ called the ***ceiling function***, is the integer greater than of equal to x
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### More Binary Codes
 
@@ -194,13 +199,13 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
 
 - One-hot encoding consists in using one bit representing each state.
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### More Binary Codes (Cont.)
 
 ![](./L1_05.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Binary Coded Decimal (BCD)
 
@@ -211,11 +216,11 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
 - BCD is a **weighted code**
 - This code is the simplest, most intuitive binary code for decimal digits and uses the same powers of 2 as a binary number, but only encodes the first ten values from 0 to 9
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Q: How to distinguish between Conversion and Coding?
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Conversion or Coding?
 
@@ -226,15 +231,15 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
 - $13_{10}=1101_2$ (This is **Conversion**)
 - $13 \Leftrightarrow 0001|0011$ (This is **Coding**)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Example: Add $2905_{\rm{BCD}}$ to $1897_{\rm{BCD}}$
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ![](./L1_06.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Error-Detection Methods
 
@@ -245,17 +250,17 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
   - **Even Parity**: the number of 1's in the code word is even.
   - **Odd Parity**: the number of 1's in the code word is odd.
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ![](./L1_07.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Gray Code
 
 ![](./L1_08.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Conversion from Binary Code to Gray Code
 
@@ -276,13 +281,13 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
 <div style="text-align: center;">
     <span style="font-weight: bold; font-style: italic;">Figure</span>. Convert Binary code 11101 into Gray code
 </div>
-<!--s-->
+</script></section></section><section ><section data-markdown><script type="text/template">
 
 # Part 2 
 
 # Boolean Algebra
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## Logical Operation
 
@@ -296,7 +301,7 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
 - **OR** is denoted by a plus ( + )
 - **NOT** is denoted by an overbar ( $ \overline{} $ ), a single quote mark ( ' ), or ( ~ ) before the variable
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## Logic Gates
 
@@ -304,19 +309,19 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
 
 ![](./L1_10.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Other Commonly Used Logic Gates
 
 <img src="./L1_11.jpg" style="zoom: 67%;" />
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Universal Gate
 
 ![](./L1_12.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Logic Diagrams and Expressions
 
@@ -326,13 +331,13 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
     <span style="font-weight: bold; font-style: italic;">Truth tables and waveforms are unique, while equations and diagrams are not</span>. 
 </div>
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## Boolean Algebra
 
 ![](./L1_14.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Duality rules
 
@@ -344,7 +349,7 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
 - The identities appear in dual pairs. When there is only one identity on a line the identity is **self-dual**. i.e., the dual expression = the original expression.
 - Unless it happens to be self-dual, the dual of an expression **does not equal to** the expression itself.
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Duality rules (Cont.)
 
@@ -360,7 +365,7 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
 
   Dual: $H=(A+B)\cdot{(A+C)}\cdot{(B+C)}$
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Duality rules (Cont.)
 
@@ -374,7 +379,7 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
 
   $X(Y+Z)=XY+XZ \Leftrightarrow X+YZ=(X+Y)(X+Z)$   (**Distributive**)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Complementing Functions
 
@@ -388,42 +393,95 @@ $110\ 0101.101_2=(65.\rm{A})_{16}$
 
   $F=\overline{X}Y\overline{Z}+X\bar{Y}\bar{Z} \Leftrightarrow \overline{F}=(X+\overline{Y}+Z)(\overline{X}+Y+Z)$
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Q1: How to proof $A+A\cdot{B}=A$?
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Q2: How to proof $AB+\overline{A}C+BC=AB+\overline{A}C$?
 
 ###  (**Consensus Theorem**)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Q3: How to proof $\overline{(X+Y)}Z+X\overline{Y}=\overline{Y}(X+Z)$?
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Useful Theorems
 
 ![](./L1_15.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Example1: Simplify Expression
 
 ### $F=AB+\overline{A}CD+\overline{A}BD+\overline{A}C\overline{D}+ABCD$
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ![](./L1_16.jpg)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ### Example2: Simplify Expression
 
 ### $L=AB+A\overline{C}+\overline{B}C+\overline{C}B+\overline{B}D+\overline{D}B+ADE(F+G)$
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ![](./L1_17.jpg)
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1600,"height":900,"margin":0.04,"transition":"fade","slideNumber":true}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
