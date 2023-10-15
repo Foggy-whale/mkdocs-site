@@ -8,7 +8,7 @@ site_description: FoggyWhale的个人空间
 nav:
   - 首页: index.md
   - 课件:
-    foreword.md
+    - foreword.md
     - 数逻:
       - Lecture1: 数逻/Lecture1/Lecture1.html
     - 技能拾遗:
