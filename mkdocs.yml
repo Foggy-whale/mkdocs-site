@@ -9,7 +9,7 @@ nav:
   - 首页: index.md
   - 课件:
     - 数逻:
-      - Lecture1: 数逻/Lecture1
+      - Lecture1: 数逻/Lecture1/Lecture1.html
     - 技能拾遗:
       - Shell: 
         - shell: 技能拾遗/Shell.md
