@@ -24,8 +24,6 @@ revealOptions:
 
 # Part 1 
 
-<br>
-
 # Number Systems
 
 <!--v-->
