@@ -1,0 +1,1647 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="FoggyWhale的个人空间">
+      
+      
+        <meta name="author" content="FoggyWhale">
+      
+      
+        <link rel="canonical" href="https://Foggy-whale.github.io/mkdocs-site/%E6%95%B0%E9%80%BB/Lecture6/">
+      
+      
+      
+      
+      <link rel="icon" href="../../logo.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>Number Systems and Boolean Algebra - FoggyWhale的个人空间</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lcdf" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="FoggyWhale的个人空间" class="md-header__button md-logo" aria-label="FoggyWhale的个人空间" data-md-component="logo">
+      
+  <img src="../../logo.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FoggyWhale的个人空间
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Number Systems and Boolean Algebra
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Foggy-whale/mkdocs-site" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Foggy-whale.github.io/mkdocs-site
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%89%8D%E8%A8%80/" class="md-tabs__link">
+          
+  
+    
+  
+  课件
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FoggyWhale的个人空间" class="md-nav__button md-logo" aria-label="FoggyWhale的个人空间" data-md-component="logo">
+      
+  <img src="../../logo.ico" alt="logo">
+
+    </a>
+    FoggyWhale的个人空间
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Foggy-whale/mkdocs-site" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Foggy-whale.github.io/mkdocs-site
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            首页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    课件
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            课件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E8%A8%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    前言
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数逻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数逻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture1/Lecture1.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture2/Lecture2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture3/Lecture3.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture4/Lecture4.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture5/Lecture5.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    技能拾遗
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            技能拾遗
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Shell
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Shell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E8%83%BD%E6%8B%BE%E9%81%97/Shell/Shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E8%83%BD%E6%8B%BE%E9%81%97/ShellScript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shell script
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E8%83%BD%E6%8B%BE%E9%81%97/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E8%83%BD%E6%8B%BE%E9%81%97/Vim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vim
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E8%83%BD%E6%8B%BE%E9%81%97/Markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E8%83%BD%E6%8B%BE%E9%81%97/Latex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Latex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E8%83%BD%E6%8B%BE%E9%81%97/Makefile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Makefile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E8%83%BD%E6%8B%BE%E9%81%97/CMake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CMake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E8%83%BD%E6%8B%BE%E9%81%97/Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E8%83%BD%E6%8B%BE%E9%81%97/GDB%5CLLDB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GDB\LLDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#week-6-combinational-logic-design" class="md-nav__link">
+    Week 6: Combinational Logic Design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    Part 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-functions" class="md-nav__link">
+    Arithmetic Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unsigned-subtraction" class="md-nav__link">
+    Unsigned Subtraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-to-do-both-unsigned-addition-and-unsigned-subtraction-is-quite-complex" class="md-nav__link">
+    Problem: To do both unsigned addition and unsigned subtraction is quite complex!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goal-to-find-shared-simpler-logic-for-both-addition-and-subtraction" class="md-nav__link">
+    Goal: To find shared simpler logic for both addition and subtraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complements" class="md-nav__link">
+    Complements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-1s-complement" class="md-nav__link">
+    Binary 1's Complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-2s-complement" class="md-nav__link">
+    Binary 2's Complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-2s-complement-method" class="md-nav__link">
+    Alternative 2's Complement Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtraction-with-2s-complement" class="md-nav__link">
+    Subtraction with 2's Complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-signed-integer-to-signed-2s-complement" class="md-nav__link">
+    Converting Signed Integer to Signed 2's Complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-signed-2s-complement-to-signed-integer" class="md-nav__link">
+    Converting Signed 2's Complement to Signed Integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-signed-2s-complement-to-signed-integer-cont" class="md-nav__link">
+    Converting Signed 2's Complement to Signed Integer (Cont.)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-extension" class="md-nav__link">
+    Sign extension
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overflow-underflow" class="md-nav__link">
+    Overflow &amp; Underflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-magnitude-arithmetic" class="md-nav__link">
+    Signed-Magnitude Arithmetic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-magnitude-arithmetic-examples" class="md-nav__link">
+    Signed-Magnitude Arithmetic Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-complement-arithmetic" class="md-nav__link">
+    Signed-Complement Arithmetic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-2s-complement-examples" class="md-nav__link">
+    Signed 2's Complement Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functional-blocks-addition" class="md-nav__link">
+    Functional Blocks: Addition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-blocks-half-adder" class="md-nav__link">
+    Function Blocks: Half-Adder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-truth-table-of-half-adder" class="md-nav__link">
+    The truth table of Half-Adder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementations-half-adder" class="md-nav__link">
+    Implementations: Half-Adder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functional-block-full-adder" class="md-nav__link">
+    Functional Block: Full-Adder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-truth-table-of-full-adder" class="md-nav__link">
+    The truth table of Full-Adder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equations-full-adder" class="md-nav__link">
+    Equations: Full-Adder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementations-full-adder" class="md-nav__link">
+    Implementations: Full-Adder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-bit-ripple-carry-binary-adder" class="md-nav__link">
+    4-bit Ripple-Carry Binary Adder
+  </a>
+  
+    <nav class="md-nav" aria-label="4-bit Ripple-Carry Binary Adder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-four-bit-ripple-carry-adder-made-from-four-1-bit-full-adders" class="md-nav__link">
+    A four-bit Ripple Carry Adder made from four 1-bit Full Adders:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carry-lookahead-development" class="md-nav__link">
+    Carry Lookahead Development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-carry-lookahead" class="md-nav__link">
+    Implementation: Carry Lookahead
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2s-complement-addersubtractor" class="md-nav__link">
+    2's Complement Adder/Subtractor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/Foggy-whale/mkdocs-site/edit/main/docs/数逻/Lecture6.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<p><link rel="stylesheet" href="custom.css"></p>
+<h1 id="lcdf">LCDF<a class="headerlink" href="#lcdf" title="Permanent link">&para;</a></h1>
+<p><br></p>
+<h2 id="week-6-combinational-logic-design">Week 6: Combinational Logic Design<a class="headerlink" href="#week-6-combinational-logic-design" title="Permanent link">&para;</a></h2>
+<!--s-->
+
+<h2 id="part-1">Part 1<a class="headerlink" href="#part-1" title="Permanent link">&para;</a></h2>
+<h2 id="arithmetic-functions">Arithmetic Functions<a class="headerlink" href="#arithmetic-functions" title="Permanent link">&para;</a></h2>
+<!--v-->
+
+<h3 id="unsigned-subtraction">Unsigned Subtraction<a class="headerlink" href="#unsigned-subtraction" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>
+<p><strong>Algorithm</strong>: </p>
+</li>
+<li>
+<p>Subtract the subtrahend N from the minuend M (M-N)</p>
+</li>
+<li>
+<p>If <strong>no borrow occurs</strong>, then M <span class="arithmatex">\(\ge\)</span> N, and the result is a non-negative number and correct.</p>
+</li>
+<li>
+<p>If <strong>an borrow occurs</strong>, then N &gt; M, and the difference M - N + <span class="arithmatex">\(2^n\)</span> is subtracted from <span class="arithmatex">\(2^n\)</span>, the result must be <strong>negative</strong>, and so we need to correct its <strong>magnitude</strong>.</p>
+</li>
+<li>
+<p>Subtracting the preceding formula from <span class="arithmatex">\(2^n\)</span>:</p>
+<p><span class="arithmatex">\(2^n-(M-N+2^n)=N-M\)</span></p>
+</li>
+<li>
+<p>a minus sign should be appended to the result.</p>
+</li>
+<li>
+<p><strong>Examples</strong>: <span class="arithmatex">\(1001_2-0111_2\)</span>,   <span class="arithmatex">\(0100_2-0111_2\)</span></p>
+</li>
+</ul>
+<!--v-->
+
+<h3 id="problem-to-do-both-unsigned-addition-and-unsigned-subtraction-is-quite-complex"><strong>Problem</strong>: To do both unsigned addition and unsigned subtraction is quite complex!<a class="headerlink" href="#problem-to-do-both-unsigned-addition-and-unsigned-subtraction-is-quite-complex" title="Permanent link">&para;</a></h3>
+<p><img src="./L6_01.png" style="zoom: 75%;" /></p>
+<!--v-->
+
+<h3 id="goal-to-find-shared-simpler-logic-for-both-addition-and-subtraction"><strong>Goal</strong>: To find shared simpler logic for both addition and subtraction<a class="headerlink" href="#goal-to-find-shared-simpler-logic-for-both-addition-and-subtraction" title="Permanent link">&para;</a></h3>
+<!--v-->
+
+<h3 id="complements">Complements<a class="headerlink" href="#complements" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>Two complements:</li>
+<li>Radix Complement<ul>
+<li>r's complement for <strong>radix r</strong></li>
+<li><strong>2's complement</strong> in binary</li>
+<li>Defined as <span class="arithmatex">\(r^n-N\)</span></li>
+</ul>
+</li>
+<li>Diminished Radix Complement of N<ul>
+<li>(r-1)'s complement for <strong>radix r</strong></li>
+<li><strong>1's complement</strong> in binary</li>
+<li>Defined as <span class="arithmatex">\((r^n-1)-N\)</span></li>
+</ul>
+</li>
+<li>Subtraction is done by <strong>adding the complement of the subtrahend</strong></li>
+<li>If the result is negative, takes its 2's complement</li>
+</ul>
+<!--v-->
+
+<h3 id="binary-1s-complement">Binary 1's Complement<a class="headerlink" href="#binary-1s-complement" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>For <span class="arithmatex">\(r = 2\)</span>, <span class="arithmatex">\(N = 01110011_2\)</span>, <span class="arithmatex">\(n=8\)</span>:</li>
+</ul>
+<p><span class="arithmatex">\(r^n-1=2^8-1=11111111_2\)</span></p>
+<ul>
+<li>The 1's complement of <span class="arithmatex">\(01110011_2\)</span> is then:</li>
+</ul>
+<p><span class="arithmatex">\(11111111_2-01110011_2=10001100_2\)</span></p>
+<ul>
+<li>Since the <span class="arithmatex">\(2^n-1\)</span> factor consists of all 1's and since <span class="arithmatex">\(1-0=1\)</span> and <span class="arithmatex">\(1-1=0\)</span>, the one's complement is obtained by complementing each individual bit (<strong>bitwise NOT</strong>)</li>
+</ul>
+<!--v-->
+
+<h3 id="binary-2s-complement">Binary 2's Complement<a class="headerlink" href="#binary-2s-complement" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>For <span class="arithmatex">\(r=2\)</span>, <span class="arithmatex">\(N=01110011_2\)</span>,<span class="arithmatex">\(n=8\)</span>:</li>
+</ul>
+<p><span class="arithmatex">\(r^n=100000000_2\)</span></p>
+<ul>
+<li>The 2's complement of 01110011 is then:</li>
+</ul>
+<p><span class="arithmatex">\(100000000_2-01110011_2=10001101_2\)</span></p>
+<ul>
+<li>Note the result is the 1's complement plus 1, a fact that can be used in designing hardware</li>
+</ul>
+<!--v-->
+
+<h3 id="alternative-2s-complement-method">Alternative 2's Complement Method<a class="headerlink" href="#alternative-2s-complement-method" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>
+<p>Given an n-bit binary number, beginning at the least significant bit and proceeding upward:</p>
+</li>
+<li>
+<p>Copy all least significant 0's</p>
+</li>
+<li>Copy the first 1</li>
+<li>
+<p>Complement all bits thereafter</p>
+</li>
+<li>
+<p><strong>Example</strong>: 2's Complement of 10010<strong>100</strong></p>
+</li>
+</ul>
+<p>10010<strong>100</strong> <span class="arithmatex">\(\rightarrow\)</span> 01101<strong>100</strong></p>
+<!--v-->
+
+<h3 id="subtraction-with-2s-complement">Subtraction with 2's Complement<a class="headerlink" href="#subtraction-with-2s-complement" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>
+<p>For n-digit, unsigned numbers M and N, find M - N in base 2:</p>
+</li>
+<li>
+<p><strong>Add the 2's complement of the subtrahend N to the minuend M</strong>:</p>
+<p><span class="arithmatex">\(M+(2^n-N)=M-N+2^n\)</span></p>
+</li>
+<li>
+<p>If M <span class="arithmatex">\(\ge\)</span> N, the sum <strong>produces end carry</strong> <span class="arithmatex">\(r^n\)</span> which is discarded; from above, M - N remains.</p>
+</li>
+<li>
+<p>if M <span class="arithmatex">\(\lt\)</span> N, the sum <strong>does not produce end carry</strong>, and from above, is equal to <span class="arithmatex">\(2^n-(N-M)\)</span>, the 2's complement of <span class="arithmatex">\((N-M)\)</span>.</p>
+</li>
+<li>
+<p>To obtain the result <span class="arithmatex">\(-(N-M)\)</span>, <strong>take the 2's complement of the sum</strong> and <strong>place a "-"</strong> to its left.</p>
+</li>
+<li>
+<p><strong>Examples</strong>: <span class="arithmatex">\(01010100_2-01000011_2\)</span>, <span class="arithmatex">\(01000011_2-01010100_2\)</span></p>
+</li>
+</ul>
+<!--v-->
+
+<h3 id="converting-signed-integer-to-signed-2s-complement">Converting Signed Integer to Signed 2's Complement<a class="headerlink" href="#converting-signed-integer-to-signed-2s-complement" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>Converting signed integer to signed 2's complement:</li>
+<li><strong>Positive</strong>: all positive numbers in 2's complement are the same as they would be in unsigned binary</li>
+<li><strong>Negative</strong>: two steps for conversion<ul>
+<li>Find the binary representation of the absolute value of the number</li>
+<li>Find the 2's complement</li>
+</ul>
+</li>
+<li><strong>Example</strong>: convert -7 to a 4-bit signed-complement</li>
+<li>absolute value: 0111</li>
+<li>2's complement: 1001</li>
+</ul>
+<!--v-->
+
+<h3 id="converting-signed-2s-complement-to-signed-integer">Converting Signed 2's Complement to Signed Integer<a class="headerlink" href="#converting-signed-2s-complement-to-signed-integer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Converting signed 2's complement to signed integer:</li>
+<li><strong>Positive</strong>: treat it as an unsigned binary number and convert normally</li>
+<li><strong>Negative</strong>: three steps for conversion<ul>
+<li>Find the 2's complement</li>
+<li>Find the absolute value of the number</li>
+<li>Append a <strong>minus sign</strong></li>
+</ul>
+</li>
+<li><strong>Example</strong>: Convert 10011 to a signed integer</li>
+<li>2's complement: 01101</li>
+<li>absolute value: 13</li>
+<li>append a minus sign: -13</li>
+</ul>
+<!--v-->
+
+<h3 id="converting-signed-2s-complement-to-signed-integer-cont">Converting Signed 2's Complement to Signed Integer (Cont.)<a class="headerlink" href="#converting-signed-2s-complement-to-signed-integer-cont" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>An alternative method to convert signed 2's complement is <strong>negative weighting</strong>:</p>
+</li>
+<li>
+<p>the most significant bit has negative weight <span class="arithmatex">\(-2^{n-1}\)</span></p>
+</li>
+<li>
+<p>other bits hold positive weights as usual, then value of X is</p>
+<p><span class="arithmatex">\(X=-2^{n-1}\cdot{B_{n-1}}+\Sigma_{i=0}^{n-2}\ 2^i\cdot{B_i}\)</span></p>
+</li>
+<li>
+<p>A simple formulation for negative weighting</p>
+<ul>
+<li><strong>Positive</strong>: value of <span class="arithmatex">\(X = -2^{n-1}\cdot0+\Sigma_{i=0}^{n-2}\ 2^i\cdot{B_{i}}\)</span></li>
+<li><strong>Negative</strong>: value of <span class="arithmatex">\(X=-(2^n-X)=-2^n+X=-2^n+2^{n-1}+\Sigma_{i=0}^{n-2}\ w_i\cdot{B_i}=-2^{n-1}+\Sigma_{i=0}^{n-2}\ w_i\cdot{B_i}\)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>Example</strong>: convert 10011 to a signed integer</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(X=-2^4+2^1+2^0=-13\)</span></p>
+<!--v-->
+
+<h3 id="sign-extension">Sign extension<a class="headerlink" href="#sign-extension" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>
+<p><strong>Sign extension preserves value in 2's complement.</strong></p>
+</li>
+<li>
+<p>Adding leading zeros to a positive number, and leading ones to a negative number, is called <strong>sign extension</strong> of a 2's complement number</p>
+</li>
+<li>
+<p>e.g., 0111 <span class="arithmatex">\(\rightarrow\)</span> <strong>000</strong>0111, 1011 <span class="arithmatex">\(\rightarrow\)</span> <strong>111</strong>1011</p>
+</li>
+<li>
+<p>A simple formulation for negative integers</p>
+</li>
+<li>
+<p>e.g. sign extension from n-bit to m-bit (m <span class="arithmatex">\(\gt\)</span> n)</p>
+<p><span class="arithmatex">\(X_m = -2^{m-1}+2^{m-2}+\dots+2^{n-1}+\Sigma_{i=0}^{n-2}\ w_i\cdot{B_i}\)</span></p>
+<p><span class="arithmatex">\(= -2^{m-2}+2^{m-3}+\dots+2^{n-1}+\Sigma_{i=0}^{n-2}\ w_i\cdot{B_i}\)</span></p>
+<p><span class="arithmatex">\(\dots\)</span></p>
+<p><span class="arithmatex">\(= -2^{n-1}+ \Sigma_{i=0}^{n-2}\ w_i\cdot{B_i}\)</span></p>
+<p><span class="arithmatex">\(=X_n\)</span></p>
+</li>
+</ul>
+<!--v-->
+
+<h3 id="overflow-underflow">Overflow &amp; Underflow<a class="headerlink" href="#overflow-underflow" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>
+<p>In 2's complemment, <strong>carry out does not indicate an overflow</strong></p>
+</li>
+<li>
+<p>The range of an n-bit 2's complement</p>
+</li>
+<li>
+<p>upper bound: <span class="arithmatex">\(\Sigma_{i=0}^{n-2}\ w_i\cdot{B_i}\)</span></p>
+</li>
+<li>
+<p>lower bound: <span class="arithmatex">\(-2^{n-1}\)</span></p>
+</li>
+<li>
+<p><strong>Examples</strong>:</p>
+</li>
+</ul>
+<p><img src="./L6_02.png" style="zoom: 75%;" /></p>
+<!--v-->
+
+<h3 id="signed-magnitude-arithmetic">Signed-Magnitude Arithmetic<a class="headerlink" href="#signed-magnitude-arithmetic" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li><strong>Operator</strong>: +/0, -/1, <strong>Operand-1</strong>: sign bit, <strong>Operand-2</strong>: sign bit</li>
+<li>If the <strong>parity of the three signs is 0</strong>:</li>
+<li>Add the magnitudes.</li>
+<li>Check for overflow.</li>
+<li>The sign of the result is the same as the sign of the first operand.</li>
+<li>If the <strong>parity of three signs is 1</strong>:</li>
+<li>Subtract the second magnitude from the first.</li>
+<li>If a borrow occurs:<ul>
+<li>Take the 2's complement of result</li>
+<li>and make the result sign the complement of sign of the first operand.</li>
+</ul>
+</li>
+<li>If a borrow doesn't occur, the sign of the result is the same as the sign of the first operand.</li>
+<li>Overflow will never occur.</li>
+</ul>
+<!--v-->
+
+<h3 id="signed-magnitude-arithmetic-examples">Signed-Magnitude Arithmetic Examples<a class="headerlink" href="#signed-magnitude-arithmetic-examples" title="Permanent link">&para;</a></h3>
+<p><img src="./L6_03.png" style="zoom:80%;" /></p>
+<!--v-->
+
+<h3 id="signed-complement-arithmetic">Signed-Complement Arithmetic<a class="headerlink" href="#signed-complement-arithmetic" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Addition</strong>:</li>
+<li>Add the numbers <strong>including the sign bits</strong>, <strong>discarding</strong> a carry out of the sign bits (2's Complement).</li>
+<li>If the <strong>sign bits were the same</strong> for both numbers and the <strong>sign of the result is different</strong>, an <strong>overflow</strong> has occurred.</li>
+<li>The sign of the result is computed in step 1. </li>
+<li><strong>Subtraction</strong>:</li>
+<li>Form the complement of the number you are subtracting and <strong>follow the rules for addition</strong></li>
+</ul>
+<!--v-->
+
+<h3 id="signed-2s-complement-examples">Signed 2's Complement Examples<a class="headerlink" href="#signed-2s-complement-examples" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../L6_04.png" /></p>
+<!--v-->
+
+<h3 id="functional-blocks-addition">Functional Blocks: Addition<a class="headerlink" href="#functional-blocks-addition" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>Binary addition used frequently</li>
+<li>Addition Development:</li>
+<li><strong>Half-Adder</strong>: a 2-input <strong>bit-wise</strong> addition functional block</li>
+<li><strong>Full-Adder</strong>: a 3-input <strong>bit-wise</strong> addition functional block</li>
+<li><strong>Ripple Carry Adder</strong>, an iterative array to perform binary addition</li>
+<li><strong>Carry-Look-Ahead Adder</strong>, a hierarchical structure to improve performance.</li>
+</ul>
+<!--v-->
+
+<h3 id="function-blocks-half-adder">Function Blocks: Half-Adder<a class="headerlink" href="#function-blocks-half-adder" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>A 2-input, 1-bit width binary adder that performs the following computations:</li>
+</ul>
+<p><img alt="" src="../L6_05.png" /></p>
+<ul>
+<li>A half adder adds two bits and produces a two-bit sum.</li>
+<li>In essence, a half adder is a 2-to-2 decoder.</li>
+</ul>
+<!--v-->
+
+<h3 id="the-truth-table-of-half-adder">The truth table of Half-Adder<a class="headerlink" href="#the-truth-table-of-half-adder" title="Permanent link">&para;</a></h3>
+<p><img src="./L6_06.png" style="zoom: 150%;" /></p>
+<!--v-->
+
+<h3 id="implementations-half-adder">Implementations: Half-Adder<a class="headerlink" href="#implementations-half-adder" title="Permanent link">&para;</a></h3>
+<p><img src="./L6_07.png" style="zoom:90%;" /></p>
+<!--v-->
+
+<h3 id="functional-block-full-adder">Functional Block: Full-Adder<a class="headerlink" href="#functional-block-full-adder" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A full adder is similar to a half adder, but includes a carry-in bit from lower stages. Like the half adder, it computes a sum bit, S and a carry bit, C.</li>
+</ul>
+<p><img src="./L6_08.png" style="zoom:85%;" /></p>
+<!--v-->
+
+<h3 id="the-truth-table-of-full-adder">The truth table of Full-Adder<a class="headerlink" href="#the-truth-table-of-full-adder" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../L6_09.png" /></p>
+<!--v-->
+
+<h3 id="equations-full-adder">Equations: Full-Adder<a class="headerlink" href="#equations-full-adder" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>From the K-map, we get:</li>
+</ul>
+<p><span class="arithmatex">\(S=X\bar{Y}\bar{Z}+\bar{X}Y\bar{Z}+\bar{X}\bar{Y}Z+XYZ=X\oplus{Y}\oplus{Z}\)</span></p>
+<p><span class="arithmatex">\(C=XY+XZ+YZ=XY+(X\oplus{Y})Z\)</span></p>
+<ul>
+<li>
+<p>The term <span class="arithmatex">\(X\cdot{Y}\)</span> is <strong>carry generate</strong>.</p>
+</li>
+<li>
+<p>The term <span class="arithmatex">\(X\oplus{Y}\)</span> is <strong>carry propagate</strong>.</p>
+</li>
+</ul>
+<!--v-->
+
+<h3 id="implementations-full-adder">Implementations: Full-Adder<a class="headerlink" href="#implementations-full-adder" title="Permanent link">&para;</a></h3>
+<p><img src="./L6_10.png" style="zoom:80%;" /></p>
+<!--v-->
+
+<h3 id="4-bit-ripple-carry-binary-adder">4-bit Ripple-Carry Binary Adder<a class="headerlink" href="#4-bit-ripple-carry-binary-adder" title="Permanent link">&para;</a></h3>
+<h5 id="a-four-bit-ripple-carry-adder-made-from-four-1-bit-full-adders">A four-bit Ripple Carry Adder made from four 1-bit Full Adders:<a class="headerlink" href="#a-four-bit-ripple-carry-adder-made-from-four-1-bit-full-adders" title="Permanent link">&para;</a></h5>
+<p><img src="./L6_11.png" style="zoom:85%;" /></p>
+<!--v-->
+
+<h3 id="carry-lookahead-development">Carry Lookahead Development<a class="headerlink" href="#carry-lookahead-development" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>Beginning at the cell 0 with carry in <span class="arithmatex">\(C_0\)</span>:</li>
+</ul>
+<p><span class="arithmatex">\(C_1=G_0+P_0C_0\)</span></p>
+<p><span class="arithmatex">\(C_2=G_1+P_1G_0+P_1P_0C_0\)</span></p>
+<p><span class="arithmatex">\(C_3=G_2+P_2G_1+P_2P_1G_0+P_2P_1P_0C_0\)</span></p>
+<p><span class="arithmatex">\(C_4=G_3+P_3G_2+P_3P_2G_1+P_3P_2P_1G_0+P_3P_2P_1P_0C_0\)</span></p>
+<ul>
+<li>By using these formulas, time complexity of the adders can be improved from O(n) to O(1).</li>
+</ul>
+<!--v-->
+
+<h3 id="implementation-carry-lookahead">Implementation: Carry Lookahead<a class="headerlink" href="#implementation-carry-lookahead" title="Permanent link">&para;</a></h3>
+<p><img src="./L6_12.png" style="zoom: 67%;" /></p>
+<!--v-->
+
+<h3 id="2s-complement-addersubtractor">2's Complement Adder/Subtractor<a class="headerlink" href="#2s-complement-addersubtractor" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<ul>
+<li>
+<p>For <strong>S = 0</strong>, add, B is passed through unchanged.</p>
+</li>
+<li>
+<p>For <strong>S = 1</strong>, subtract, the 2's complement of B is formed by using XORs to form the 1's complement and adding the 1 applied to <span class="arithmatex">\(C_0\)</span></p>
+</li>
+</ul>
+<p><img alt="" src="../L6_13.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
