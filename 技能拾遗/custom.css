@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap');
 
 :root {
-    --r-main-font: "LXGWWenKai-Regular";
-    --r-heading-font: "LXGWWenKai-Regular";
+    --r-main-font: "LXGW WenKai Mono TC";
+    --r-heading-font: "LXGW WenKai Mono TC";
     //--r-heading-font: "Noto Serif SC";
     --r-code-font: "Roboto Mono";
 }
