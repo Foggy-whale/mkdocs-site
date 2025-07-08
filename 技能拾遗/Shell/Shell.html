@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./dist/theme/beige.css" id="theme" />
     <link rel="stylesheet" href="./css/highlight/tomorrow-night-bright.css" />
 
+    <link rel="stylesheet" href="./_assets/custom.css" />
   </head>
   <body>
     <div class="reveal">
@@ -455,7 +456,7 @@ find . -type f -exec rm {} \;
       // options from URL query string
       var queryOptions = Reveal().getQueryHash() || {};
 
-      var options = extend(defaultOptions, {"width":1600,"height":900,"margin":0.04,"transition":"slide","slideNumber":true,"_":["Shell.md"],"static":"./Shell"}, queryOptions);
+      var options = extend(defaultOptions, {"width":1600,"height":900,"margin":0.04,"transition":"slide","slideNumber":true,"_":["Shell.md"],"static":"./Shell","css":"custom.css"}, queryOptions);
     </script>
 
 
