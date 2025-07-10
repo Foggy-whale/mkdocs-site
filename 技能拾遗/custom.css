@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("https://fontsapi.zeoseven.com/292/main/result.css");
 
-@font-face {
-    font-family: 'LXGWWenKai-Regular'; 
-    src: url('./assets/fonts/LXGWWenKai-Regular.ttf') format('truetype'); 
-    font-weight: normal; 
-    font-style: normal;
-    font-display: swap; 
+body {
+    font-family: "LXGW WenKai";
+    font-weight: normal;
 }
 
 
 :root {
-    --r-main-font: "LXGWWenKai-Regular";
-    --r-heading-font: "LXGWWenKai-Regular";
-    //--r-heading-font: "Noto Serif SC";
+    --r-main-font: "LXGW WenKai";
+    --r-heading-font: "LXGW WenKai";
     --r-code-font: "Roboto Mono";
 }
 
