@@ -43,9 +43,9 @@
     \texttt{\tikzmarknode{colon}{:\strut}}%
     \tikzmarknode{percent}{\colorbox{bgPercent}{\texttt{\%\strut}}}%
     \tikzmarknode{s}{\colorbox{bgS}{\texttt{s\strut}}}%
-    \tikzmarknode{pattern}{\colorbox{bgPattern}{\texttt{/pattern/\strut}}}%
-    \tikzmarknode{text}{\colorbox{bgText}{\texttt{/text/\strut}}}%
-    \tikzmarknode{g}{\colorbox{bgG}{\texttt{g\strut}}}%
+    \tikzmarknode{pattern}{\colorbox{bgPattern}{\texttt{/<pattern>\strut}}}%
+    \tikzmarknode{text}{\colorbox{bgText}{\texttt{/<text>\strut}}}%
+    \tikzmarknode{g}{\colorbox{bgG}{\texttt{/g\strut}}}%
 \end{Huge}
 
 % --- 批注層 ---
@@ -57,11 +57,11 @@
     % 透過設定不同的 `below` 數值 (例如 1em 和 2.5em)，
     % 將批注交錯排列在不同的高度，避免重疊。
     \node[annot, below=2.5em of colon]   (annot_colon)   {命令列模式};
-    \node[annot, below=1em of percent] (annot_percent) {範圍};
+    \node[annot, below=1em of percent] (annot_percent) {范围};
     \node[annot, below=2.5em of s]       (annot_s)       {命令};
-    \node[annot, below=1em of pattern] (annot_pattern) {查找目標};
-    \node[annot, below=2.5em of text]    (annot_text)    {替換內容};
-    \node[annot, below=1em of g]       (annot_g)       {全域標誌};
+    \node[annot, below=1em of pattern] (annot_pattern) {目标模式};
+    \node[annot, below=2.5em of text]    (annot_text)    {替换内容};
+    \node[annot, below=1em of g]       (annot_g)       {global全局};
 
     % 箭頭的程式碼無需改動，它們會自動延伸到新的位置
     \draw[arr] (annot_percent.north) -- (percent.south);

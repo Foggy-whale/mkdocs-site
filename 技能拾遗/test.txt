@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+void function(int a, int b);
+
+int main()
+{
+    function;
+    function;
+    function;
+    function;
+    function;
+    function;       // comment
+    function;
+    Function;
+}
+
+void function()
+{
+
+}
