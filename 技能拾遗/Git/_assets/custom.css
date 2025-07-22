@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("https://fontsapi.zeoseven.com/292/main/result.css");
+
+body {
+    font-family: "LXGW WenKai";
+    font-weight: normal;
+}
+
+
+:root {
+    --r-main-font: "LXGW WenKai";
+    --r-heading-font: "LXGW WenKai";
+    --r-code-font: "Roboto Mono";
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    text-transform: none;
+    text-align: center;
+}
+
+.reveal section { text-align: left; }
+.reveal img {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+code.hljs { 
+    font-size: 130%; 
+    line-height: 120%; 
+}
+.hljs-meta { color: #F5F5DC; }
+
+.reveal pre code { max-height: 700px; }
+.reveal blockquote {
+    width: 90%;
+    font-style: normal;
+    font-size: 80%;
+}

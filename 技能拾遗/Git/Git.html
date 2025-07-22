@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>技能拾遗</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/beige.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/tomorrow-night-bright.css" />
+
+    <link rel="stylesheet" href="./_assets/custom.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="<!--s-->" data-separator-vertical="<!--v-->">
+          <textarea data-template>
+            
+
+<link rel="stylesheet" href="custom.css">
+
+# 技能拾遗
+
+<br>
+
+## Lec04: Git
+
+<!--v-->
+
+## 目录
+
+<div style="
+    font-size: 1.8em;          /* 调整所有目录链接的基准字号 */
+    line-height: 1.8;          /* 调整行高，确保文本不拥挤 */
+    margin-top: 25px;          /* 与目录标题之间留些空隙 */
+">
+    <a href="#/1">Part1. Git简介</a><br>
+    <a href="#/2">Part2. Git基础指令</a><br>
+    <a href="#/3">Part3. 远程仓库管理</a><br>
+    <a href="#/4">Part4. 分支管理</a><br>
+</div>
+
+<!--s-->
+
+## Part 1
+
+## Git简介
+
+<!--v-->
+
+## 集中式版本控制系统
+
+<p align="center">使用非常简单，但致命的缺点是单点故障可能引发整个系统的崩溃</p>
+
+![](./L4_central.png)
+
+<!--v-->
+
+## 分布式版本控制系统
+
+<p align="center">较为复杂，占用更多的空间；但胜在稳定，支持离线工作、分支管理等强大特性</p>
+
+![](./assets/L4_distribute.png)
+
+<!--v-->
+
+## Git安装(Client)
+
+<img src="./L4_02.png" style="zoom:50%;" />
+
+<!--v-->
+
+## Git安装(Server)
+
+```sh
+$ brew install git
+```
+
+
+
+<img src="./assets/L4_01.png" style="zoom:40%;" />
+
+<!--v-->
+
+## git初始化配置
+
+<p align="center">设置用户名和邮箱以便让你的协作者知道是谁提交的代码；设置网络代理以便后续能够正常使用<span style="color: orange; font-weight: bold">git clone</span></p>
+
+```shell
+git config --global user.name "your_name"
+
+git config --global user.email "your_email"
+
+git config --global http.proxy "http://127.0.0.1:端口号"
+git config --global https.proxy "https://127.0.0.1:端口号"
+```
+
+
+
+<!--v-->
+
+## *终端个性化
+
+<!--v-->
+
+## Windows Terminal
+
+<img src="./L4_03.png" style="zoom:60%;" />
+
+<!--v-->
+
+<img src="./L4_04.png" style="zoom:67%;" />
+
+<!--v-->
+
+![](./L4_05.png)
+
+<!--v-->
+
+## iTerm2
+
+<img src="./L4_06.png" style="zoom:40%;" />
+
+<!--v-->
+
+<img src="./L4_07.png" style="zoom:50%;" />
+
+<!--v-->
+
+## oh-my-zsh
+
+<img src="./oh-my-zsh.png" style="zoom: 200%;" />
+
+<!--s-->
+
+## Part 2
+
+## Git基础指令
+
+<!--v-->
+
+## 创建仓库
+
+<p align="center">使用<span style="color: orange; font-weight: bold">git init</span>指令，可以在当前目录下创建git仓库</p>
+
+<img src="./L4_08.png" style="zoom:67%;" />
+
+<!--v-->
+
+## 创建仓库(cont.)
+
+<p align="center">使用<span style="color: orange; font-weight: bold">git init [repo]</span>指令，可以在当前目录下创建[repo]目录，并为其新建git仓库</p>
+
+![](./L4_09.png)
+
+<!--v-->
+
+## 克隆仓库
+
+<p align="center">使用<span style="color: orange; font-weight: bold">git clone [URL]</span>指令,可以克隆指定web url下的git仓库</p>
+
+<img src="./L4_10.png" style="zoom:40%;" />
+
+<!--v-->
+
+## 文件区域
+
+![](./L4_11.png)
+
+<!--v-->
+
+## 查看仓库状态
+
+<p align="center">使用<span style="color: orange; font-weight: bold">git status</span>指令，查看当前仓库的状态，显示文件的变更追踪情况</p>
+
+![](./L4_12.png)
+
+<!--v-->
+
+## 添加文件到暂存区
+
+<p align="center">使用<span style="color: orange; font-weight: bold">git add [filename]</span>指令，将文件添加到暂存区</p>
+
+![](./L4_13.png)
+
+<!--v-->
+
+## 提交暂存区到本地仓库
+
+<p align="center">使用<span style="color: orange; font-weight: bold">git commit -m "your comment"</span>指令，将暂存区提交至本地仓库中</p>
+
+![](./L4_14.png)
+
+<!--v-->
+
+## 版本回溯
+
+<p align="center">使用<span style="color: orange; font-weight: bold">git reset [nodeid]</span>指令，可以将本地仓库回滚到指定的git节点</p>
+
+---
+
+
+
+<span style="color: orange; font-weight: bold">git reset</span>的三种模式
+
+- <span style="color: red; font-weight: bold">soft</span>: 回滚后，不影响工作区和暂存区的状态，仅仅改变了本地仓库的<span style="color: red; font-weight: bold">HEAD</span>指针
+- <span style="color: red; font-weight: bold">mixed</span>: 回滚后，不影响工作区的状态，清空暂存区的内容，并用当前git节点的提交内容填充暂存区
+- <span style="color: red; font-weight: bold">hard</span>：回滚后，清空工作区和暂存区的内容，并用git节点的提交内容填充工作区和暂存区。这是最具风险的一种reset模式
+
+<!--v-->
+
+## 差异比较
+
+<p align="center">使用<span style="color: orange; font-weight: bold">git diff</span>指令，可以比较不同区域或是不同版本的文件差异</p>
+
+---
+
+- <span style="color: orange; font-weight: bold">git diff</span>: 显示已写入暂存区的文件和工作区内相同文件之间的差异
+- <span style="color: orange; font-weight: bold">git diff --cached</span>: 显示暂存区和上一次提交的差异
+- <span style="color: orange; font-weight: bold">git diff HEAD</span>: 显示工作区与当前git节点的差异
+- <span style="color: orange; font-weight: bold">git diff [nodeid]</span>: 显示工作区与指定节点的差异
+
+<!--v-->
+
+## 删除文件
+
+<br>
+
+<p align="center">使用<span style="color: orange; font-weight: bold">git rm [filename]</span>指令，可以删除目录中的指定文件，并将其从暂存区移除</p>
+
+<br>
+
+<p align="center">使用<span style="color: orange; font-weight: bold">git rm [filename] --cached</span>指令，可以将文件从暂存区移除</p>
+
+<!--s-->
+
+## Part 3
+
+## 远程仓库管理
+
+<!--v-->
+
+## SSH配置
+
+<img src="./L4_15.png" style="zoom:67%;" />
+
+<!--v-->
+
+## SSH配置(cont.)
+
+<img src="./L4_16.png" style="zoom:50%;" />
+
+<!--v-->
+
+## 创建远程仓库
+
+<img src="./L4_17.png" style="zoom:50%;" />
+
+<!--v-->
+
+## 创建远程仓库(cont.)
+
+<img src="./L4_18.png" style="zoom: 40%;" />
+
+<!--v-->
+
+## push操作
+
+- <span style="color: orange; font-weight: bold">git push origin main</span>：将本地 main 分支的更改推送到名为 origin 的远程仓库的 main 分支。
+
+- <span style="color: orange; font-weight: bold">git push -u origin feature-branch</span>：首次推送 feature-branch 到 origin，并建立本地 feature-branch 追踪 origin/feature-branch 的关系。
+
+- <span style="color: orange; font-weight: bold">git push</span>：如果本地分支已经设置了上游追踪分支，则直接将更改推送到该上游分支
+
+- <span style="color: orange; font-weight: bold">git push --force</span> 或 <span style="color: orange; font-weight: bold">git push -f</span>：强制推送。**慎用！** 会覆盖远程仓库上的历史。
+
+<!--v-->
+
+## pull操作
+
+- <span style="color: orange; font-weight: bold">git pull origin main</span>：从 origin 远程仓库拉取 main 分支的更改，并合并到当前本地分支。
+
+- <span style="color: orange; font-weight: bold">git pull</span>：如果当前本地分支已经设置了上游追踪分支，则自动从该上游分支拉取并合并。 
+
+<!--v-->
+
+## fetch操作
+
+<br>
+
+- <span style="color: orange; font-weight: bold">git fetch origin</span>：从名为 origin 的远程仓库获取所有最新信息。
+
+- <span style="color: orange; font-weight: bold">git fetch origin main</span>：只获取 origin 仓库的 main 分支的最新信息。
+
+- <span style="color: orange; font-weight: bold">git fetch --all</span>：获取所有远程仓库的最新信息。
+
+<!--s-->
+
+## Part 4
+
+## 分支管理
+
+<!--v-->
+
+## 参考网站
+
+<p align="center">https://learngitbranching.js.org/</p>
+
+<img src="./L4_19.png" style="zoom: 40%;" />
+          </textarea>
+        </section>
+      </div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./mermaid/dist/mermaid.min.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        highlight: {
+          highlightOnLoad: false
+        },
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1600,"height":900,"margin":0.04,"transition":"slide","slideNumber":true,"_":["Git.md"],"static":"./Git","css":"custom.css"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+      Reveal.addEventListener('ready', function (event) {
+        const blocks = Reveal.getRevealElement().querySelectorAll('pre code:not(.mermaid)');
+        const hlp = Reveal.getPlugin('highlight');
+        blocks.forEach(hlp.highlightBlock);
+      });
+    </script>
+
+    <script>
+      const mermaidOptions = extend({ startOnLoad: false }, {});
+      mermaid.startOnLoad = false;
+      mermaid.initialize(mermaidOptions);
+      const cb = function (event) { mermaid.init(mermaidOptions, '.stack.present>.present pre code.mermaid'); };
+      Reveal.addEventListener('ready', cb);
+      Reveal.addEventListener('slidetransitionend', cb);
+    </script>
+  </body>
+</html>
